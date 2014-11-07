@@ -1,3 +1,7 @@
+String.prototype.capitalize = function() {
+	return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 var lichess = {};
 var serial = 0;
 lichess.challenge_me = function(author, text) {
@@ -28,11 +32,13 @@ lichess.all_scores = function(author, text) {
 		}
 	});
 };
-lichess.long_details = function(author) {
+lichess.long_details = function(author, text) {
 	serial++;
 	var id = serial;
-	var tmp = "<a id=\"lichess_long_" + author + "\" class=\"lichess_widget lichess_long\" href=\"http://lichess.org/@/" + author + "\">";
-	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />Lichess<br /><br />"
+	if (text == undefined)
+		text = author + " on Lichess";
+	var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_long\" href=\"http://lichess.org/@/" + author + "\">";
+	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
 	tmp    += "<span>One: two<br />Three: four</span></a>";
 	document.write(tmp);
 	$.ajax({
@@ -40,7 +46,15 @@ lichess.long_details = function(author) {
 		dataType: "jsonp",
 		jsonp: "callback",
 		success: function(data) {
-			$("#lichess_widget_" + id + " > span").text(author + "<br />Classical: " + data.perfs.classical.rating + "<br />Bullet: " + data.perfs.bullet.rating);
+			var res = "";
+			for (var key in data.perfs) {
+				if (data.perfs.hasOwnProperty(key) && data.perfs[key].games > 0) {
+					if (res!="")
+						res += "<br />";
+					res += key.capitalize() + " rating: " + data.perfs[key].rating;
+				}
+			}
+			$("#lichess_widget_" + id + " > span").html(res);
 		}
 	});
 };
