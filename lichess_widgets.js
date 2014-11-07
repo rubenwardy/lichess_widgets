@@ -48,7 +48,7 @@ lichess.all_scores = function(author, text) {
 
 			if (text && text != "")
 				text = text + " | ";
-			$("#lichess_widget_" + id + " > span").text(text + "Classical: " + data.perfs.classical.rating + " | Bullet: " + data.perfs.bullet.rating);
+			$("#lichess_widget_" + id + " > span").html(text + "Classical <b>" + data.perfs.classical.rating + "</b> | Bullet <b>" + data.perfs.bullet.rating + "</b>");
 		}
 	});
 };
@@ -74,7 +74,7 @@ lichess.long_details = function(author, text) {
 				if (data.perfs.hasOwnProperty(key) && data.perfs[key].games > 0) {
 					if (res!="")
 						res += "<br />";
-					res += key.capitalize() + " rating: " + data.perfs[key].rating;
+					res += key.capitalize() + " <b>" + data.perfs[key].rating + "</b> / " + data.perfs[key].games + " Games";
 				}
 			}
 			$("#lichess_widget_" + id + " > span").html(res);
