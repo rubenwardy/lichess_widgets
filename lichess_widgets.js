@@ -10,7 +10,7 @@ lichess.__make_online = function(id) {
 	$(id + " > img").attr("src", "http://rubenwardy.github.io/lichess_widgets/lichess_online.png");
 }
 
-lichess.challenge_me = function(author, text) {
+lichess.profile = function(author, text) {
 	serial++;
 	var id = serial;
 	if (text == null)
@@ -29,7 +29,7 @@ lichess.challenge_me = function(author, text) {
 		}
 	});
 };
-lichess.all_scores = function(author, text) {
+lichess.profile_scores = function(author, text) {
 	serial++;
 	var id = serial;
 	if (text == undefined)
@@ -52,7 +52,7 @@ lichess.all_scores = function(author, text) {
 		}
 	});
 };
-lichess.long_details = function(author, text) {
+lichess.profile_big = function(author, text) {
 	serial++;
 	var id = serial;
 	if (text == undefined)
