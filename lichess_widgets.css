@@ -8,11 +8,6 @@
 	text-decoration: none;
 }
 
-.lichess_widget b {
-	font-weight: 700;
-	font-size: 100%;
-}
-
 .lichess_widget img {
 	margin: 0 10px 0 0;
 	display: inline-block;
@@ -30,7 +25,6 @@
 
 .lichess_long hr {
 	margin: 6px 0 2px 0;
-	background: #666;
 	border: none;
 	height: 1px
 }

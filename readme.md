@@ -3,4 +3,4 @@ Widgets for Lichess
 
 Create by rubenwardy
 
-License: WTFPL
+License: CC-BY-SA 3.0

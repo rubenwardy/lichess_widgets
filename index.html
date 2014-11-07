@@ -5,19 +5,25 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="lichess_widgets.css" />
 	<link rel="stylesheet" href="dark.css" />
+	<link rel="stylesheet" href="light.css" />
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="lichess_widgets.js"></script>
 	<style>
-		html {
+		html, body {
 			margin: 0;
 			padding: 0;
 			font-family: "Arial", sans-serif;
 		}
-		body {
+		.container {
 			width: 90%;
 			max-width: 950px;
 			margin: auto;
-			padding: 0;
+		}
+		#black_section {
+			display: block;
+			margin: 20px 0 0 0;
+			padding: 5px 0 20px 0;
+			background: #2a2a2a;
 		}
 		table {
 			margin: 20px 0 0 0;
@@ -32,83 +38,160 @@
 			border-radius: 5px;
 			display: block;
 		}
+		#black_section blockcode {
+			background: #333;
+			color: #e0e0e0;
+		}
 	</style>
 </head>
 <body>
-	<h1>Widgets for Lichess (Work in progress)</h1>
+	<div class="container">
+		<h1>Widgets for Lichess (Work in progress)</h1>
 
-	<p>
-		Add the following to the &lt;head&gt; of your webpage,
-		and then add one of the widgets to the &lt;body&gt; of your webpage.
-	</p>
+		<p>
+			Add the following to the &lt;head&gt; of your webpage,
+			and then add one of the widgets to the &lt;body&gt; of your webpage.
+		</p>
 
-	<blockcode>
-		&lt;link rel="stylesheet" href="http://rubenwardy.github.io/lichess_widgets/lichess_widgets.css" /&gt;<br />
-		&lt;link rel="stylesheet" href="http://rubenwardy.github.io/lichess_widgets/dark.css" /&gt;<br />
-		&lt;script src="http://code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;<br />
-		&lt;script src="http://rubenwardy.github.io/lichess_widgets/lichess_widgets.js"&gt;&lt;/script&gt;
-	</blockcode>
+		<blockcode>
+			&lt;link rel="stylesheet" href="http://rubenwardy.github.io/lichess_widgets/lichess_widgets.css" /&gt;<br />
+			&lt;script src="http://code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;<br />
+			&lt;script src="http://rubenwardy.github.io/lichess_widgets/lichess_widgets.js"&gt;&lt;/script&gt;<br />
+			&lt;!-- For the light theme --&gt; &lt;link rel="stylesheet" href="http://rubenwardy.github.io/lichess_widgets/light.css" /&gt;  <br />
+			&lt;!-- For the dark theme --&gt; &lt;link rel="stylesheet" href="http://rubenwardy.github.io/lichess_widgets/dark.css" /&gt;
+		</blockcode>
 
-	<table>
-		<tr>
-			<td>
-				<script>lichess.profile("dark", "rubenwardy", "Lichess");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile("dark", "rubenwardy", "Lichess");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<script>lichess.profile("dark", "rubenwardy");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile("dark", "rubenwardy");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<script>lichess.profile_scores("dark", "rubenwardy");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile_scores("dark", "rubenwardy");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<script>lichess.profile_scores("dark", "rubenwardy", "");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile_scores("dark", "rubenwardy", "");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<script>lichess.profile_big("dark", "rubenwardy");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile_big("dark", "rubenwardy");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
+		<table>
+			<tr>
+				<td>
+					<script>lichess.profile("light", "rubenwardy", "Lichess");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile("light", "rubenwardy", "Lichess");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<script>lichess.profile("light", "rubenwardy");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile("light", "rubenwardy");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<script>lichess.profile_scores("light", "rubenwardy");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile_scores("light", "rubenwardy");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<script>lichess.profile_scores("light", "rubenwardy", "");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile_scores("light", "rubenwardy", "");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<script>lichess.profile_big("light", "rubenwardy");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile_big("light", "rubenwardy");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
 
-		<tr>
-			<td>
-				<script>lichess.profile_big("dark", "rubenwardy", "My Lichess");</script>
-			</td>
-			<td>
-				<blockcode>
-					&lt;script&gt;lichess.profile_big("dark", "rubenwardy", "My Lichess");&lt;/script&gt;
-				</blockcode>
-			</td>
-		</tr>
-	</table>
+			<tr>
+				<td>
+					<script>lichess.profile_big("light", "rubenwardy", "My Lichess");</script>
+				</td>
+				<td>
+					<blockcode>
+						&lt;script&gt;lichess.profile_big("light", "rubenwardy", "My Lichess");&lt;/script&gt;
+					</blockcode>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="black_section">
+		<div class="container">
+			<table>
+				<tr>
+					<td>
+						<script>lichess.profile("dark", "rubenwardy", "Lichess");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile("dark", "rubenwardy", "Lichess");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<script>lichess.profile("dark", "rubenwardy");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile("dark", "rubenwardy");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<script>lichess.profile_scores("dark", "rubenwardy");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile_scores("dark", "rubenwardy");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<script>lichess.profile_scores("dark", "rubenwardy", "");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile_scores("dark", "rubenwardy", "");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<script>lichess.profile_big("dark", "rubenwardy");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile_big("dark", "rubenwardy");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<script>lichess.profile_big("dark", "rubenwardy", "My Lichess");</script>
+					</td>
+					<td>
+						<blockcode>
+							&lt;script&gt;lichess.profile_big("dark", "rubenwardy", "My Lichess");&lt;/script&gt;
+						</blockcode>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</html>

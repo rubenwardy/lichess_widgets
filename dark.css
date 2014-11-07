@@ -9,3 +9,12 @@
 .lichess_theme_dark.lichess_widget:hover {
 	background: #4A4A4A;
 }
+
+.lichess_theme_dark.lichess_long hr {
+	background: #444;
+}
+
+.lichess_theme_dark.lichess_widget b {
+	font-weight: 700;
+	font-size: 100%;
+}

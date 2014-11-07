@@ -1,0 +1,19 @@
+/* Light Style */
+.lichess_theme_light.lichess_widget {
+	background: #EEE;
+	border: 1px solid #E0E0E0;
+	color: black;
+}
+
+.lichess_theme_light.lichess_widget:hover {
+	background: #e0e0e0;
+}
+
+.lichess_theme_light..lichess_long hr {
+	background: #e0e0e0;
+}
+
+.lichess_theme_light.lichess_widget b {
+	font-weight: 800;
+	font-size: 100%;
+}
