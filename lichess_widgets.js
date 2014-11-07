@@ -4,13 +4,30 @@ String.prototype.capitalize = function() {
 
 var lichess = {};
 var serial = 0;
+
+lichess.__make_online = function(id) {
+	$(id).addClass("lichess_online");
+	$(id + " > img").attr("src", "http://rubenwardy.github.io/lichess_widgets/lichess_online.png");
+}
+
 lichess.challenge_me = function(author, text) {
+	serial++;
+	var id = serial;
 	if (text == null)
 		text = author;
-	var tmp = "<a class=\"lichess_widget\" href=\"http://lichess.org/@/" + author + "\">";
+	var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget\" href=\"http://lichess.org/@/" + author + "\">";
 	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
 	tmp    += "<span>" + text + "</span></a>";
 	document.write(tmp);
+	$.ajax({
+		url: "http://en.lichess.org/api/user/" + author,
+		dataType: "jsonp",
+		jsonp: "callback",
+		success: function(data) {
+			if (data.online)
+				lichess.__make_online("#lichess_widget_" + id);
+		}
+	});
 };
 lichess.all_scores = function(author, text) {
 	serial++;
@@ -26,6 +43,9 @@ lichess.all_scores = function(author, text) {
 		dataType: "jsonp",
 		jsonp: "callback",
 		success: function(data) {
+			if (data.online)
+				lichess.__make_online("#lichess_widget_" + id);
+
 			if (text && text != "")
 				text = text + " | ";
 			$("#lichess_widget_" + id + " > span").text(text + "Classical: " + data.perfs.classical.rating + " | Bullet: " + data.perfs.bullet.rating);
@@ -46,6 +66,9 @@ lichess.long_details = function(author, text) {
 		dataType: "jsonp",
 		jsonp: "callback",
 		success: function(data) {
+			if (data.online)
+				lichess.__make_online("#lichess_widget_" + id);
+
 			var res = "";
 			for (var key in data.perfs) {
 				if (data.perfs.hasOwnProperty(key) && data.perfs[key].games > 0) {

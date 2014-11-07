@@ -33,3 +33,7 @@
 	border: none;
 	height: 1px
 }
+
+.lichess_online img {
+	color: green;
+}
