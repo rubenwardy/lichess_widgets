@@ -10,12 +10,12 @@ lichess.__make_online = function(id) {
 	$(id + " > img").attr("src", "http://rubenwardy.github.io/lichess_widgets/lichess_online.png");
 }
 
-lichess.profile = function(author, text) {
+lichess.profile = function(theme, author, text) {
 	serial++;
 	var id = serial;
 	if (text == null)
 		text = author;
-	var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget\" href=\"http://lichess.org/@/" + author + "\">";
+	var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme + "\" href=\"http://lichess.org/@/" + author + "\">";
 	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
 	tmp    += "<span>" + text + "</span></a>";
 	document.write(tmp);
@@ -29,12 +29,12 @@ lichess.profile = function(author, text) {
 		}
 	});
 };
-lichess.profile_scores = function(author, text) {
+lichess.profile_scores = function(theme, author, text) {
 	serial++;
 	var id = serial;
 	if (text == undefined)
 		text = author;
-	var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget\" href=\"http://lichess.org/@/" + author + "\">";
+	var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme + "\" href=\"http://lichess.org/@/" + author + "\">";
 	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
 	tmp    += "<span>Loading...</span></a>";
 	document.write(tmp);
@@ -52,12 +52,12 @@ lichess.profile_scores = function(author, text) {
 		}
 	});
 };
-lichess.profile_big = function(author, text) {
+lichess.profile_big = function(theme, author, text) {
 	serial++;
 	var id = serial;
 	if (text == undefined)
 		text = author + " on Lichess";
-	var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_long\" href=\"http://lichess.org/@/" + author + "\">";
+	var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme + " lichess_long\" href=\"http://lichess.org/@/" + author + "\">";
 	tmp    += "<img src=\"http://en.lichess.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
 	tmp    += "<span>One: two<br />Three: four</span></a>";
 	document.write(tmp);

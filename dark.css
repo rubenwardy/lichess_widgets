@@ -1,48 +1,11 @@
 /* Dark Style */
-.lichess_widget {
-	font-family: "Open Sans","Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-	display: inline-block;
-	margin: 2px;
+.lichess_theme_dark.lichess_widget {
 	background: #333;
 	border: 1px solid #444;
-	padding: 5px 10px 7px 10px;
 	color: #acacac;
 	border-radius: 4px;
-	text-decoration: none;
 }
 
-.lichess_widget:hover {
+.lichess_theme_dark.lichess_widget:hover {
 	background: #4A4A4A;
-}
-
-.lichess_widget b {
-	font-weight: 700;
-	font-size: 100%;
-
-}
-
-.lichess_widget img {
-	margin: 0 10px 0 0;
-	display: inline-block;
-	height: 20px;
-	vertical-align: middle;
-}
-.lichess_widget span {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.lichess_long {
-	min-width: 220px;
-}
-
-.lichess_long hr {
-	margin: 6px 0 2px 0;
-	background: #666;
-	border: none;
-	height: 1px
-}
-
-.lichess_online img {
-	color: green;
 }
