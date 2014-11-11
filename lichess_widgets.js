@@ -1,4 +1,4 @@
-var lichess = (function() {
+var lichess_widgets = (function() {
 	function make_online(id) {
 		$(id).addClass("lichess_online");
 		$(id + " > img").attr("src", "http://rubenwardy.github.io/lichess_widgets/lichess_online.png");
