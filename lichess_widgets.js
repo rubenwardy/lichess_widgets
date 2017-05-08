@@ -11,7 +11,7 @@ var lichess_widgets = (function() {
 	function make_online(id) {
 		var ele = document.getElementById(id);
 		ele.className = ele.className + " lichess_online";
-		ele.getElementsByTagName('img')[0].src = "http://rubenwardy.github.io/lichess_widgets/lichess_online.png";
+		ele.getElementsByTagName('img')[0].src = "https://rubenwardy.com/lichess_widgets/lichess_online.png";
 	}
 
 	function capitalize(inp) {
@@ -27,11 +27,11 @@ var lichess_widgets = (function() {
 			if (text == null)
 				text = author;
 			var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
-			tmp    += "\" href=\"http://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"http://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
+			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
-			fetchJson("http://en.lichess.org/api/user/" + author,function(data) {
+			fetchJson("https://en.lichess.org/api/user/" + author,function(data) {
 				if (data.online)
 					make_online("lichess_widget_" + id);
 			});
@@ -42,11 +42,11 @@ var lichess_widgets = (function() {
 			if (text == undefined)
 				text = author;
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
-			tmp    += "\" href=\"http://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"http://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
+			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
-			fetchJson("http://en.lichess.org/api/user/" + author, function(data) {
+			fetchJson("https://en.lichess.org/api/user/" + author, function(data) {
 				if (data.online)
 					make_online("lichess_widget_" + id);
 
@@ -65,11 +65,11 @@ var lichess_widgets = (function() {
 			if (text == undefined)
 				text = author + " on Lichess";
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
-			tmp    += " lichess_long\" href=\"http://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"http://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
+			tmp    += " lichess_long\" href=\"https://lichess.org/@/" + author + "\">";
+			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
 			tmp    += "<span></span></a>";
 			document.write(tmp);
-			fetchJson("http://en.lichess.org/api/user/" + author, function(data) {
+			fetchJson("https://en.lichess.org/api/user/" + author, function(data) {
 				if (data.online)
 					make_online("lichess_widget_" + id);
 
