@@ -59,11 +59,13 @@ var lichess_widgets = (function() {
 				document.getElementById("lichess_widget_" + id).getElementsByTagName('span')[0].innerHTML = res;
 			});
 		},
-		profile_big: function(theme, author, text) {
+		profile_big: function(theme, author, text, minGames) {
 			serial++;
 			var id = serial;
 			if (text == undefined)
 				text = author + " on Lichess";
+			if (minGames == undefined)
+				minGames = 1;
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += " lichess_long\" href=\"https://lichess.org/@/" + author + "\">";
 			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
@@ -75,7 +77,7 @@ var lichess_widgets = (function() {
 
 				var res = "";
 				for (var key in data.perfs) {
-					if (data.perfs.hasOwnProperty(key) && data.perfs[key].games > 0) {
+					if (data.perfs.hasOwnProperty(key) && data.perfs[key].games >= minGames) {
 						if (res!="")
 							res += "<br />";
 						res += capitalize(key) + " <b>" + data.perfs[key].rating + "</b> / " + data.perfs[key].games + " Games";
