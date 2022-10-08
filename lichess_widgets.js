@@ -50,7 +50,7 @@ var lichess_widgets = (function() {
 				text = author;
 			var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "<img src=\"https://lichess1.org/assets/logo/lichess-favicon-32.png\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
@@ -65,7 +65,7 @@ var lichess_widgets = (function() {
 				text = author;
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "<img src=\"https://lichess1.org/assets/logo/lichess-favicon-32.png\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
@@ -88,7 +88,7 @@ var lichess_widgets = (function() {
 				text = author + " on Lichess";
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += " lichess_long\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
+			tmp    += "<img src=\"https://lichess1.org/assets/logo/lichess-favicon-32.png\" alt=\"lichess\" />" + text + "<hr />"
 			tmp    += "<span></span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
