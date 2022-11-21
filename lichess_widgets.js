@@ -36,6 +36,9 @@ var lichess_widgets = (function() {
 		ele.className = ele.className + " lichess_online";
 		ele.getElementsByTagName('img')[0].src = "https://rubenwardy.com/lichess_widgets/lichess_online.png";
 	}
+	function profile_logo(theme) {
+		return (theme == "dark") ? "https://lichess1.org/assets/logo/lichess-favicon-32-invert.png" : "https://lichess1.org/assets/logo/lichess-favicon-32.png";
+	}
 
 	function capitalize(inp) {
 		return inp.charAt(0).toUpperCase() + inp.slice(1);
@@ -50,7 +53,7 @@ var lichess_widgets = (function() {
 				text = author;
 			var tmp = "<a  id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "<img src=\"" + profile_logo(theme) + "\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
@@ -65,7 +68,7 @@ var lichess_widgets = (function() {
 				text = author;
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += "\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />"
+			tmp    += "<img src=\"" + profile_logo(theme) + "\" alt=\"lichess\" />"
 			tmp    += "<span>" + text + "</span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
@@ -88,7 +91,7 @@ var lichess_widgets = (function() {
 				text = author + " on Lichess";
 			var tmp = "<a id=\"lichess_widget_" + id + "\" class=\"lichess_widget lichess_theme_" + theme;
 			tmp    += " lichess_long\" href=\"https://lichess.org/@/" + author + "\">";
-			tmp    += "<img src=\"https://lichess1.org/assets/images/favicon-32-white.png\" alt=\"lichess\" />" + text + "<hr />"
+			tmp    += "<img src=\"" + profile_logo(theme) + "\" alt=\"lichess\" />" + text + "<hr />"
 			tmp    += "<span></span></a>";
 			document.write(tmp);
 			getAuthor(author, function(data) {
